@@ -1,6 +1,11 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <a class="navbar-brand" href="/">Microposts</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
           <li class="nav-item"><%= link_to 'Users', users_path, class: 'nav-link' %></li>
@@ -10,7 +15,7 @@
               <li class="dropdown-item"><%= link_to 'My profile', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
-            </ul>>
+            </ul>
           </li>
         <% else %>
           <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
@@ -20,3 +25,4 @@
     </div>
   </nav>
 </header>
+
